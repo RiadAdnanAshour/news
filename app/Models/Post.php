@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\Image;
 use App\Models\Comment;
 use App\Models\Category;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -35,9 +36,12 @@ class Post extends Model
         return $this->hasMany(Comment::class,'post_id');
     }
 
-    public function image(){
-        return $this->hasMany(Image::class,'post_id');
+
+    public function images()
+    {
+        return $this->hasMany(Image::class, 'post_id');
     }
+    
  public function sluggable(): array
     {
         return [
@@ -46,5 +50,6 @@ class Post extends Model
             ]
         ];
     }
+
 
 }
