@@ -17,10 +17,10 @@ class RelatedSiteSeeder extends Seeder
         $faker  = Factory::create();
 
         for($i = 0 ;$i<5;$i++){
-            // RelatedNewsSite::create([
-            //     'name'=>$faker->sentence(1),
-            //     'url'=>$faker->url(),
-            // ]);
+            RelatedNewsSite::create([
+                'name'=>$faker->sentence(1),
+                'url'=>$faker->url(),
+            ]);
         }
     }
 }

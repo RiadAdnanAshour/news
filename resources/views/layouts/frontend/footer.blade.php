@@ -25,9 +25,9 @@
                    <div class="footer-widget">
                        <h3 class="title">Useful Links</h3>
                        <ul>
-                          {{-- @foreach ($relatedSites as $site)
+                          @foreach ($relatedSites as $site)
                           <li><a href="{{ $site->url }}" title="{{$site->name}}">{{ $site->name }}</a></li>
-                          @endforeach --}}
+                          @endforeach
                        </ul>
                    </div>
                </div>

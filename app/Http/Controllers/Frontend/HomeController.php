@@ -20,8 +20,8 @@ class HomeController extends Controller
             ->take(3)
             ->get();
 
-        $categories = Category::has('posts' , '>=' , 2)->get();
-        $categories_with_posts = $categories->map(function($category){
+        $categories = Category::has('posts', '>=', 2)->get();
+        $categories_with_posts = $categories->map(function ($category) {
             $category->posts = $category->posts()->limit(4)->get();
             return $category;
         });
@@ -29,6 +29,5 @@ class HomeController extends Controller
         $read_more_posts = Post::latest()->take(5)->get();
 
         return view('frontend.index', compact('posts', 'gretest_posts_views', 'oldest_news', 'gretest_posts_comments', 'categories_with_posts', 'read_more_posts'));
-
     }
 }

@@ -1,13 +1,13 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\Contact;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Countacts>
  */
-class CountactsFactory extends Factory
+class ContactFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,12 +17,12 @@ class CountactsFactory extends Factory
     public function definition(): array
     {
         return [
-            'name'=>fake()->name(),
-            'email'=>fake()->email(),
-            'phone'=>fake()->phoneNumber(),
-            'title'=>fake()->title(),
-            'body'=>fake()->paragraph(),
-            'ip_address'=>fake()->ipv4(),
+            'name' => $this->faker->name(),
+            'email' => $this->faker->email(),
+            'phone' => $this->faker->phoneNumber(),
+            'title' => $this->faker->title(),
+            'body' => $this->faker->paragraph(),
+            'ip_address' => $this->faker->ipv4(),
         ];
     }
 }

@@ -27,7 +27,11 @@ class Post extends Model
     public function user(){
         return $this->belongsTo(User::class,'user_id');
     }
-   
+       // إضافة الطريقة active لتصفية المنشورات النشطة
+       public function scopeActive($query)
+       {
+           return $query->where('status', 'active'); // افترض أن الحقل 'status' يحتوي على قيم مثل 'active' و 'inactive'
+       }
     // public function admin(){
     //     return $this->belongsTo(Admin::class,'user_id');
     // }

@@ -21,4 +21,9 @@ use App\Http\Controllers\Frontend\HomeController;
 // Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('frontend.index');
 
+Route::group([
+    'as'=>'frontend'
+],
+function(){
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
