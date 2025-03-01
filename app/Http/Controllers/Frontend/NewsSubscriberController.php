@@ -24,7 +24,7 @@ class NewsSubscriberController extends Controller
             return redirect()->back();
         }
 
-        // Mail::to($request->email)->send(new NewSubscriberMail());
+        Mail::to($request->email)->send(new NewSubscriberMail());
         Session::flash('success' , 'Thanks For Subscribe!');
         return redirect()->back();
     }
